@@ -1,0 +1,18 @@
+ table{
+        /* border-spacing: 0; */
+        /* width: 100%; */
+    }
+    td{
+        /* padding: 10px; */
+        position: relative;
+    }
+    tr.deleted td:before{
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: -2px;
+        right: -2px;
+        height: 1px;
+        border-top: 3px solid green;
+    }
+
