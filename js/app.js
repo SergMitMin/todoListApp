@@ -59,13 +59,22 @@ document.addEventListener('submit', (e) => {
     e.preventDefault;
     //Получаем значение инпута
     let mission = document.querySelector('#task').value;
+
+    //validation
+    if(document.querySelector('#task').value == '') {
+        alert('Введите задачу');
+    } else {
+
     //Создаём экземплр класса таски
     let task = new Task(mission);
+    
     //Добавление таски в Ui
     UI.addTaskToList(task);
 
     // Очистка инпута
     document.querySelector('#task').value = '';
+    }
+
 });
  //зачёркивание таски
  document.querySelector('#task-list').addEventListener('click', (e) => {
@@ -75,4 +84,4 @@ document.addEventListener('submit', (e) => {
  //Ивент: удаление таски
  document.querySelector('#task-list').addEventListener('click', (e) => {
     UI.removeTask(e.target);
- })
+ });
